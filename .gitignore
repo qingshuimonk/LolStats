@@ -93,3 +93,6 @@ credential.txt
 
 # test file
 HelloWorld.py
+
+# temporary file
+*~
