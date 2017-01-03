@@ -87,9 +87,3 @@ ENV/
 
 # Rope project settings
 .ropeproject
-
-# credential file
-credential.txt
-
-# test file
-HelloWorld.py
