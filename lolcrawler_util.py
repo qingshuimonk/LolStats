@@ -70,3 +70,20 @@ def get_matchinfo_by_matchid(matchid, api_key=read_key(), region='na'):
                                '?api_key=' + api_key)
     matchinfo = json.load(response)
     return matchinfo
+
+
+def get_champion_name(champion_id, api_key=read_key(), region='na'):
+    """
+    get champion name by its id
+    :param champion_id:
+    :param api_key:
+    :param region:
+    :return:
+    """
+    response = urllib2.urlopen('https://global.api.pvp.net/api/lol/static-data/'+region+'/v1.2/champion/' +
+                               str(champion_id)+'?api_key=' + api_key)
+    champion = json.load(response)
+    return champion['name']
+
+if __name__ == "__main__":
+    print(get_champion_name(432))

@@ -1,5 +1,6 @@
 from lolcrawler_util import *
 import pickle
+import datetime
 
 
 def get_usrid_from_league(league):
@@ -93,3 +94,13 @@ class PlayerMatchHistory:
             f = open(os.path.join(path, '%s_%s_%s.pickle' % (self.summoner_name, self.rank_type, self.season)), 'wb')
             pickle.dump(self, f)
             f.close()
+
+
+def unix_time_millis(dt):
+    """
+    convert human read time to epoch time in milliseconds
+    :param dt:  datetime
+    :return:    epoch time in milliseconds
+    """
+    epoch = datetime.datetime.utcfromtimestamp(0)
+    return (dt - epoch).total_seconds() * 1000.0
